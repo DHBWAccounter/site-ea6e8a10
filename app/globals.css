@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #3D9991;
+    --accent: #3D9991;
+    --background: #212121;
+    --foreground: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-white hover:text-primary transition-colors duration-200;
+  }
+
+  .nav-dropdown {
+    @apply absolute top-full left-0 bg-background border border-gray-700 min-w-[220px] py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50;
+  }
+
+  .nav-dropdown-item {
+    @apply block px-4 py-2 text-sm text-white hover:bg-gray-800 hover:text-primary transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 font-medium hover:bg-opacity-90 transition-colors;
+  }
+}
